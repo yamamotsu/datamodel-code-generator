@@ -363,6 +363,7 @@ class OpenAPIParser(JsonSchemaParser):
                         name, object_schema, [*path, status_code, content_type]
                     )
                 else:
+                    self.resolve_ref(object_schema.ref)
                     data_types[status_code][content_type] = self.get_ref_data_type(
                         object_schema.ref
                     )
