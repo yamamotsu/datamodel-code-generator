@@ -42,6 +42,11 @@ class UsersPostRequest(BaseModel):
     __root__: List[UsersPostRequestItem]
 
 
+class Error(BaseModel):
+    code: int
+    message: str
+
+
 class Pet(BaseModel):
     id: int
     name: str
